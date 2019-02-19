@@ -7,8 +7,8 @@ s.txt
 script.txt
 
 # virtualenv
-*/ENV/
+**/ENV/
 
 # pycharm
-*/.idea/
+**/.idea/
 
