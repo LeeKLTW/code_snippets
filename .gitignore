@@ -5,3 +5,10 @@ __pycache__/
 # Video Scripts
 s.txt
 script.txt
+
+# virtualenv
+*/ENV/
+
+# pycharm
+*/.idea/
+
