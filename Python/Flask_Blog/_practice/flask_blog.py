@@ -1,6 +1,6 @@
 # encoding: utf-8
 from flask import Flask, render_template, url_for, flash, redirect
-from form import RegistrationFrom, LoginForm
+from forms import RegistrationForm, LoginForm
 
 app = Flask(__name__)
 # todo why?
@@ -33,10 +33,16 @@ def about():
     return render_template('about.html', title='About')
 
 
+@app.route("/register",methods=['GET','POST'])
 def register():
-    pass
+    form = RegistrationForm()
+    if form.validate_on_submit():
+        flash(f'Account created for {form.username.data} successfully.')
+        return redirect(url_for('home'))
+    else:
+        render_template('')
 
-
+@app.route("/login",methods=['GET','POST'])
 def login():
     pass
 
