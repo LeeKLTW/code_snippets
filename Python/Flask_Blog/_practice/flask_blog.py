@@ -1,7 +1,10 @@
 # encoding: utf-8
-from flask import Flask, render_template
+from flask import Flask, render_template, url_for, flash, redirect
+from form import RegistrationFrom, LoginForm
 
 app = Flask(__name__)
+# todo why?
+app.config['SECRETE_KEY'] = '5791628bb0b13ce0c676dfde280ba245'
 
 posts = [
     {
@@ -28,6 +31,14 @@ def home():
 @app.route("/about")
 def about():
     return render_template('about.html', title='About')
+
+
+def register():
+    pass
+
+
+def login():
+    pass
 
 
 if __name__ == "__main__":
