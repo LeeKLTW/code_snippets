@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 # import secrets
 # secrets.token_hex(16)
-# app.config['SECRETE_KEY'] = '33f0baa056c172061e5b2394b9cb9915'
+app.config['SECRET_KEY'] = '33f0baa056c172061e5b2394b9cb9915'
 
 posts = [
     {
@@ -38,7 +38,11 @@ def about():
 @app.route("/register", methods=['GET', 'POST'])
 def register():
     form = RegistrationForm()
+    if form.validate_on_submit():
+        flash(f'Account {form.username.data} registered successfully.',category='success')
+        return redirect(url_for('home'))
     return render_template('register.html', title='Register', form=form)
+
 
 
 @app.route("/login", methods=['GET', 'POST'])
