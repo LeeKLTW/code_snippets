@@ -3,8 +3,10 @@ from flask import Flask, render_template, url_for, flash, redirect
 from forms import RegistrationForm, LoginForm
 
 app = Flask(__name__)
-# fixme
-# app.config['SECRETE_KEY'] = '5791628bb0b13ce0c676dfde280ba245'
+
+# import secrets
+# secrets.token_hex(16)
+# app.config['SECRETE_KEY'] = '33f0baa056c172061e5b2394b9cb9915'
 
 posts = [
     {
