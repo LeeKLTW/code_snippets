@@ -35,18 +35,16 @@ def about():
     return render_template('about.html', title='About')
 
 
-@app.route("/register",methods=['GET','POST'])
+@app.route("/register", methods=['GET', 'POST'])
 def register():
     form = RegistrationForm()
-    if form.validate_on_submit():
-        flash(f'Account created for {form.username.data} successfully.')
-        return redirect(url_for('home'))
-    else:
-        render_template('')
+    return render_template('register.html', title='Register', form=form)
 
-@app.route("/login",methods=['GET','POST'])
+
+@app.route("/login", methods=['GET', 'POST'])
 def login():
-    pass
+    form = RegistrationForm()
+    return render_template('login.html', title='Login', form=form)
 
 
 if __name__ == "__main__":
